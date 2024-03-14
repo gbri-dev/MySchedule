@@ -1,9 +1,8 @@
-import Contact from '../../components/Contact'
+import FormCad from '../../containers/Register'
 
 const Cadastro = () => (
   <div>
-    <h1>Novo Contato</h1>
-    <Contact />
+    <FormCad />
   </div>
 )
 

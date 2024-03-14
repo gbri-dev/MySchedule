@@ -16,4 +16,8 @@ export const Circulo = styled(Link)`
   align-items: center;
   font-size: 40px;
   text-decoration: none;
+
+  &:hover {
+    box-shadow: rgba(67, 255, 100, 0.4) 0px 0px 0px 3px;
+  }
 `
