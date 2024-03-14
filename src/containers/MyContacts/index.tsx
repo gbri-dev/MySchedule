@@ -1,37 +1,31 @@
+import { useSelector } from 'react-redux'
 import Contact from '../../components/Contact'
+import { RootReducer } from '../../store'
 
 const MyContacts = () => {
-  const pessoas = [
-    {
-      id: 1,
-      nome: 'Gabriel',
-      tell: '27 99987-7446',
-      email: 'gabriel.camposdasilva@hotmail.com'
-    },
-    {
-      id: 2,
-      nome: 'Stéfany',
-      tell: '27 99857-2883',
-      email: 'sennaoficial55@gmail.com'
-    },
-    {
-      id: 3,
-      nome: 'tech gol',
-      tell: '27 99841-6139',
-      email: 'dgtechgo@dgtechgo.com'
+  const { itens } = useSelector((state: RootReducer) => state.contact)
+  const contacts = itens
+
+  const count = (qtd: number) => {
+    let message = ''
+    if (qtd > 0) {
+      message = `${qtd} contato(s) cadastrado(s)`
+    } else {
+      message = 'Nenhum contato foi cadastrado!'
     }
-  ]
+
+    return message
+  }
+
   return (
     <main>
-      <p>{pessoas.length} contatos cadastrados</p>
+      <p>{count(contacts.length)}</p>
       <ul>
-        <li>
-          {pessoas.map((c) => (
-            <li key={c.id}>
-              <Contact id={c.id} name={c.nome} tell={c.tell} email={c.email} />
-            </li>
-          ))}
-        </li>
+        {contacts.map((c) => (
+          <li key={c.id}>
+            <Contact id={c.id} name={c.name} tell={c.tell} email={c.email} />
+          </li>
+        ))}
       </ul>
     </main>
   )
