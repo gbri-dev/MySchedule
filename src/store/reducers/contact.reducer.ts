@@ -18,12 +18,6 @@ const initialState: ContactState = {
       name: 'Gabriel',
       tell: '27 99987-7446',
       email: 'gabriel.camposdasilva@hotmail.com'
-    },
-    {
-      id: 3,
-      name: 'Stéfany',
-      tell: '27 99857-2883',
-      email: 'sennaoficial55@gmail.com'
     }
   ]
 }
